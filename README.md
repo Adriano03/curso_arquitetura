@@ -12,7 +12,8 @@ Projeto Flutter - Arquitetura Limpa com MVVM (Model-View-ViewModel).
 - Classe para obter vários estilos de textos;
 - Classe para gerênciar as rotas;
 - Classe para obter o caminho das imagens utilizadas no aplicativo;
-
+- Criação da splashScreen contendo a cor e foto do app;
+- Criação da tela de onBoarding com 4 passo, podendo transitar entre elas, ou com os botões em bottomSheet;
 
 
 
