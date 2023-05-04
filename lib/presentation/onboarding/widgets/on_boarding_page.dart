@@ -1,7 +1,7 @@
+import 'package:curso_arquitetura/domain/model.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 
-import 'package:curso_arquitetura/presentation/onboarding/onboarding.dart';
 import 'package:curso_arquitetura/presentation/resources/values_manager.dart';
 
 class OnBoardingPage extends StatelessWidget {
