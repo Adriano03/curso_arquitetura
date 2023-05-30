@@ -31,6 +31,12 @@ class _OnboardingViewState extends State<OnboardingView> {
     super.initState();
   }
 
+  @override
+  void dispose() {
+    _viewModel.dispose();
+    super.dispose();
+  }
+
   Widget _getBottomSheetWidget(SliderViewObject sliderViewObject) {
     int currentIndex = sliderViewObject.currentIndex;
     return Expanded(
@@ -88,12 +94,6 @@ class _OnboardingViewState extends State<OnboardingView> {
     } else {
       return SvgPicture.asset(ImageAssets.hollowCircle);
     }
-  }
-
-  @override
-  void dispose() {
-    _viewModel.dispose();
-    super.dispose();
   }
 
   @override
@@ -164,59 +164,59 @@ class _OnboardingViewState extends State<OnboardingView> {
 
 // Metódos do Professor para exibir bottomSheet;
 
-  Widget _getBottomSheetWidget2(SliderViewObject sliderViewObject) {
-    return Expanded(
-      child: Container(
-        color: ColorManager.primary,
-        child: Row(
-          mainAxisAlignment: MainAxisAlignment.spaceBetween,
-          children: [
-            Padding(
-              padding: const EdgeInsets.all(AppPadding.p14),
-              child: GestureDetector(
-                child: SizedBox(
-                  height: AppSize.s20,
-                  width: AppSize.s20,
-                  child: SvgPicture.asset(ImageAssets.leftArrow),
-                ),
-                onTap: () {
-                  _pageController.animateToPage(
-                    _viewModel.goPrevious(),
-                    duration: const Duration(milliseconds: DurationConstant.m400),
-                    curve: Curves.easeInOut,
-                  );
-                },
-              ),
-            ),
-            Row(
-              children: [
-                for (int i = 0; i < sliderViewObject.numOfSlides; i++)
-                  Padding(
-                    padding: const EdgeInsets.all(AppPadding.p8),
-                    child: _getProperCircle(i, sliderViewObject.currentIndex),
-                  ),
-              ],
-            ),
-            Padding(
-              padding: const EdgeInsets.all(AppPadding.p14),
-              child: GestureDetector(
-                child: SizedBox(
-                  height: AppSize.s20,
-                  width: AppSize.s20,
-                  child: SvgPicture.asset(ImageAssets.rightArrow),
-                ),
-                onTap: () {
-                  _pageController.animateToPage(
-                    _viewModel.goNext(),
-                    duration: const Duration(milliseconds: DurationConstant.m400),
-                    curve: Curves.easeInOut,
-                  );
-                },
-              ),
-            ),
-          ],
-        ),
-      ),
-    );
-  }
+  // Widget _getBottomSheetWidget2(SliderViewObject sliderViewObject) {
+  //   return Expanded(
+  //     child: Container(
+  //       color: ColorManager.primary,
+  //       child: Row(
+  //         mainAxisAlignment: MainAxisAlignment.spaceBetween,
+  //         children: [
+  //           Padding(
+  //             padding: const EdgeInsets.all(AppPadding.p14),
+  //             child: GestureDetector(
+  //               child: SizedBox(
+  //                 height: AppSize.s20,
+  //                 width: AppSize.s20,
+  //                 child: SvgPicture.asset(ImageAssets.leftArrow),
+  //               ),
+  //               onTap: () {
+  //                 _pageController.animateToPage(
+  //                   _viewModel.goPrevious(),
+  //                   duration: const Duration(milliseconds: DurationConstant.m400),
+  //                   curve: Curves.easeInOut,
+  //                 );
+  //               },
+  //             ),
+  //           ),
+  //           Row(
+  //             children: [
+  //               for (int i = 0; i < sliderViewObject.numOfSlides; i++)
+  //                 Padding(
+  //                   padding: const EdgeInsets.all(AppPadding.p8),
+  //                   child: _getProperCircle(i, sliderViewObject.currentIndex),
+  //                 ),
+  //             ],
+  //           ),
+  //           Padding(
+  //             padding: const EdgeInsets.all(AppPadding.p14),
+  //             child: GestureDetector(
+  //               child: SizedBox(
+  //                 height: AppSize.s20,
+  //                 width: AppSize.s20,
+  //                 child: SvgPicture.asset(ImageAssets.rightArrow),
+  //               ),
+  //               onTap: () {
+  //                 _pageController.animateToPage(
+  //                   _viewModel.goNext(),
+  //                   duration: const Duration(milliseconds: DurationConstant.m400),
+  //                   curve: Curves.easeInOut,
+  //                 );
+  //               },
+  //             ),
+  //           ),
+  //         ],
+  //       ),
+  //     ),
+  //   );
+  // }
 }

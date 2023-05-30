@@ -1,6 +1,6 @@
 import 'dart:async';
 
-import 'package:curso_arquitetura/domain/model.dart';
+import 'package:curso_arquitetura/domain/models/model.dart';
 import 'package:curso_arquitetura/presentation/base/base_view_model.dart';
 import 'package:curso_arquitetura/presentation/resources/assets_manager.dart';
 import 'package:curso_arquitetura/presentation/resources/strings_manager.dart';
@@ -25,23 +25,23 @@ class OnBoardingViewModel extends BaseViewModel
     _postDataToView();
   }
 
-  @override
-  int goNext() {
-    int nextIndex = _currentIndex++;
-    if (nextIndex == 3) {
-      _currentIndex = 0;
-    }
-    return _currentIndex;
-  }
+  // @override
+  // int goNext() {
+  //   int nextIndex = _currentIndex++;
+  //   if (nextIndex == 3) {
+  //     _currentIndex = 0;
+  //   }
+  //   return _currentIndex;
+  // }
 
-  @override
-  int goPrevious() {
-    int previousIndex = _currentIndex--;
-    if (previousIndex == 0) {
-      _currentIndex = _list.length - 1;
-    }
-    return _currentIndex;
-  }
+  // @override
+  // int goPrevious() {
+  //   int previousIndex = _currentIndex--;
+  //   if (previousIndex == 0) {
+  //     _currentIndex = _list.length - 1;
+  //   }
+  //   return _currentIndex;
+  // }
 
   @override
   void onPageChanged(int index) {
@@ -95,8 +95,8 @@ class OnBoardingViewModel extends BaseViewModel
 
 // Inputs que o modelView receberá de outra view;
 abstract class OnBoardingViewModelInputs {
-  void goNext();
-  void goPrevious();
+  // void goNext();
+  // void goPrevious();
   void onPageChanged(int index);
   // Adicionar dados na Stream;
   Sink get inputSliderViewObject;

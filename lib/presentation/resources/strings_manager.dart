@@ -11,4 +11,11 @@ class AppStrings {
   static const String onBoardingSubTitle4 = 'App-Clean Architecture é incrível utilizando a arquitetura limpa #4';
 
   static const String skip = 'Pular';
+  static const String userName = 'Nome';
+  static const String userNameError = 'Nome está incorreto';
+  static const String password = 'Senha';
+  static const String passwordError = 'Senha incorreta';
+  static const String login = 'Entrar';
+  static const String forgetPassword = 'Esqueceu a senha?';
+  static const String registerText = 'Não tem conta? Cadastre-se';
 }

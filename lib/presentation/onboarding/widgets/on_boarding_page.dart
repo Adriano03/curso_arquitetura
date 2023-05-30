@@ -1,4 +1,4 @@
-import 'package:curso_arquitetura/domain/model.dart';
+import 'package:curso_arquitetura/domain/models/model.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 
