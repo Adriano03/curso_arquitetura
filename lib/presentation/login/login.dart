@@ -1,3 +1,4 @@
+import 'package:curso_arquitetura/app/di.dart';
 import 'package:curso_arquitetura/presentation/login/login_view_model.dart';
 import 'package:curso_arquitetura/presentation/resources/assets_manager.dart';
 import 'package:curso_arquitetura/presentation/resources/color_manager.dart';
@@ -14,7 +15,7 @@ class LoginView extends StatefulWidget {
 }
 
 class _LoginViewState extends State<LoginView> {
-  final LoginViewModel _viewModel = LoginViewModel(null);
+  final LoginViewModel _viewModel = instance<LoginViewModel>();
 
   final _userNameEC = TextEditingController();
   final _passwordEC = TextEditingController();

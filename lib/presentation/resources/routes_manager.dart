@@ -1,3 +1,4 @@
+import 'package:curso_arquitetura/app/di.dart';
 import 'package:curso_arquitetura/presentation/forgot_password/forgot_password.dart';
 import 'package:curso_arquitetura/presentation/login/login.dart';
 import 'package:curso_arquitetura/presentation/main/main_view.dart';
@@ -24,6 +25,7 @@ class RouteGenerator {
       case Routes.splashRoute:
         return MaterialPageRoute(builder: (_) => const SplashView());
       case Routes.loginRoute:
+        initLoginModule();
         return MaterialPageRoute(builder: (_) => const LoginView());
       case Routes.onBoardingRoute:
         return MaterialPageRoute(builder: (_) => const OnboardingView());

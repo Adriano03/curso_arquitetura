@@ -13,7 +13,7 @@ class LoginViewModel extends BaseViewModel with LoginViewModelInputs, LoginViewM
 
   var loginObject = LoginObject('', '');
 
-  final LoginUseCase? _loginUseCase;
+  final LoginUseCase _loginUseCase;
 
   LoginViewModel(this._loginUseCase);
 
@@ -40,17 +40,17 @@ class LoginViewModel extends BaseViewModel with LoginViewModelInputs, LoginViewM
 
   @override
   Future<void> login() async {
-    // (await _loginUseCase!.execute(LoginUserCaseInput(loginObject.name, loginObject.password)))
-    //     .fold(
-    //   (failure) => {
-    //     // left -> failure
-    //     print(failure.message),
-    //   },
-    //   (data) => {
-    //     // right -> success (data)
-    //     print(data.customer?.name),
-    //   },
-    // );
+    (await _loginUseCase.execute(LoginUserCaseInput(loginObject.name, loginObject.password)))
+        .fold(
+      (failure) => {
+        // left -> failure
+        print(failure.message),
+      },
+      (data) => {
+        // right -> success (data)
+        print(data.customer?.name),
+      },
+    );
   }
 
   @override
